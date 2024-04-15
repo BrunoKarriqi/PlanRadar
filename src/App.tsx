@@ -1,4 +1,5 @@
 import './App.css'
+import ticketData from '../TicketData/tickets.json';
 
 function App() {
 
@@ -6,15 +7,12 @@ function App() {
     <>
       <div>
         <h1>Tickets List</h1>
-
         <div className={'listContainer'}>
-          <div className={'listItem'}>
-            <p>Lorem Ipsum</p>
-          </div>
-
-          <div className={'listItem'}>
-            <p>Lorem Ipsum</p>
-          </div>
+          {ticketData.map((item) => (
+            <div className={'listItem'}>
+              <p>{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>
