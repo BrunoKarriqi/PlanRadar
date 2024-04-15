@@ -8,3 +8,18 @@ h1 {
   text-align: center;
   color: #fff;
 }
+
+.listContainer {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.listItem {
+  background-color: #c6d1d6;
+  padding: 10px 20px;
+  border-radius: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
