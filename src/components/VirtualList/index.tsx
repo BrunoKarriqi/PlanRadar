@@ -1,10 +1,8 @@
 import React from 'react';
 import {useState} from "react";
 import './style.css';
-import { type PropTypes } from "./types.ts";
 
-function VirtualList(props: PropTypes) {
-  const { ticketData, itemHeight, containerHeight } = props;
+function VirtualList({ticketData, itemHeight, containerHeight}) {
   const [scroll, setScroll] = useState(0);
   const startIndex = Math.floor(scroll / itemHeight);
   const endIndex = Math.min(
