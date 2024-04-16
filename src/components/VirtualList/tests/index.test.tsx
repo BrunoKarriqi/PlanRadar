@@ -31,7 +31,7 @@ test('scrolls VirtualizedList component when user scrolls', () => {
     date: 30,
     time: '20:30',
     month: 'april',
-    location: 'perrenjas'
+    location: 'Tirana'
   }));
   const { getByTestId } = render(<VirtualizedList ticketData={mockedData}  containerHeight={700} itemHeight={70}/>);
 
