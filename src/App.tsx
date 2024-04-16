@@ -11,6 +11,7 @@ function App() {
     startIndex + Math.ceil(containerHeight / itemHeight),
     ticketData.length
   );
+  const visibleItems = ticketData.slice(startIndex, endIndex);
 
   const handleScroll = (event) => {
     setScroll(event.target.scrollTop);
@@ -27,7 +28,7 @@ function App() {
           <div
             className={'listContainer'}
           >
-            {ticketData.map((item) => (
+            {visibleItems.map((item) => (
               <div key={item._id} className={'listItem'} style={{height: `${itemHeight}px`}}>
                 <p>{item.description}</p>
               </div>
