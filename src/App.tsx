@@ -35,7 +35,14 @@ function App() {
           >
             {visibleItems.map((item) => (
               <div key={item._id} className={'listItem'} style={{height: `${itemHeight}px`}}>
-                <p>{item.description}</p>
+                <div className={'leftSide'}>
+                  <h3>{item.date}</h3>
+                  <p>{item.month}</p>
+                </div>
+                <div className={'rightSide'}>
+                  <h3>{item.name}</h3>
+                  <p>{item.time} | {item.location}</p>
+                </div>
               </div>
             ))}
           </div>
