@@ -27,6 +27,11 @@ function App() {
         <div style={{ height: `${ticketData.length * itemHeight}px` }}>
           <div
             className={'listContainer'}
+            style={{
+              position: "relative",
+              height: `${visibleItems.length * itemHeight}px`,
+              top: `${startIndex * itemHeight}px`,
+            }}
           >
             {visibleItems.map((item) => (
               <div key={item._id} className={'listItem'} style={{height: `${itemHeight}px`}}>
