@@ -6,18 +6,18 @@ import VirtualizedList from '../index.tsx';
 jest.mock('../style.css', () => ({}));
 
 test('renders VirtualizedList component', () => {
-  const data = [
-    { _id: 1, date: '01', month: 'January', name: 'Event 1', time: '10:00', location: 'Location 1' },
-    { _id: 2, date: '02', month: 'February', name: 'Event 2', time: '11:00', location: 'Location 2' },
-    { _id: 3, date: '03', month: 'March', name: 'Event 3', time: '12:00', location: 'Location 3' },
+  const mockedData = [
+    { _id: "1", name: "Item 1", date: 25, month: "July", time: "01:05", location: "Puerto Rico"},
+    { _id: "2", name: "Item 2", date: 25, month: "July", time: "01:05", location: "Puerto Rico"},
+    { _id: "3", name: "Item 3", date: 25, month: "July", time: "01:05", location: "Puerto Rico"},
   ];
-  const { getByTestId } = render(<VirtualizedList ticketData={data} />);
+  const { getByTestId } = render(<VirtualizedList ticketData={mockedData}  containerHeight={700} itemHeight={70}/>);
   const virtualizedList = getByTestId('scroll-container');
   expect(virtualizedList).toBeInTheDocument();
 });
 
 test('renders fallback content when VirtualizedList receives an empty dataset', () => {
-  const { getByTestId } = render(<VirtualizedList ticketData={[]} />);
+  const { getByTestId } = render(<VirtualizedList ticketData={[]}  containerHeight={700} itemHeight={70}/>);
 
   const fallbackContent = getByTestId('scroll-container');
 
@@ -25,8 +25,8 @@ test('renders fallback content when VirtualizedList receives an empty dataset', 
 });
 
 test('scrolls VirtualizedList component when user scrolls', () => {
-  const data = Array.from({ length: 10000 }, (_, index) => index);
-  const { getByTestId } = render(<VirtualizedList ticketData={data} />);
+  const mockedData = Array.from({ length: 10000 }, (_, index) => index);
+  const { getByTestId } = render(<VirtualizedList ticketData={mockedData}  containerHeight={700} itemHeight={70}/>);
 
   const listContainer = getByTestId('scroll-container');
 
