@@ -1,8 +1,9 @@
-import React from 'react';
 import {useState} from "react";
 import './style.css';
+import { type PropTypes } from "./types.ts";
 
-function VirtualList({ticketData, itemHeight, containerHeight}) {
+function VirtualList(props: PropTypes) {
+  const { ticketData, itemHeight, containerHeight } = props;
   const [scroll, setScroll] = useState(0);
   const startIndex = Math.floor(scroll / itemHeight);
   const endIndex = Math.min(
@@ -11,8 +12,8 @@ function VirtualList({ticketData, itemHeight, containerHeight}) {
   );
   const visibleItems = ticketData.slice(startIndex, endIndex);
 
-  const handleScroll = (event) => {
-    setScroll(event.target.scrollTop);
+  const handleScroll = (event: React.UIEvent<HTMLDivElement, UIEvent>) => {
+    setScroll((event.target as HTMLDivElement).scrollTop);
   }
 
   return (
