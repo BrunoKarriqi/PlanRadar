@@ -1,5 +1,5 @@
 import VirtualList from "./components/VirtualList";
-import ticketData from '../TicketData/tickets.json'
+import ticketData from './TicketData/tickets.json'
 
 function App() {
 
