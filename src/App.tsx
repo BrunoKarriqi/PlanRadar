@@ -6,6 +6,11 @@ function App() {
   const [scroll, setScroll] = useState(0);
   const itemHeight = 70;
   const containerHeight = 700;
+  const startIndex = Math.floor(scroll / itemHeight);
+  const endIndex = Math.min(
+    startIndex + Math.ceil(containerHeight / itemHeight),
+    ticketData.length
+  );
 
   const handleScroll = (event) => {
     setScroll(event.target.scrollTop);
